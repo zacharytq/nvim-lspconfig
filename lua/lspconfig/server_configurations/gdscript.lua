@@ -2,7 +2,7 @@ local util = require 'lspconfig.util'
 
 return {
   default_config = {
-    cmd = { 'nc', 'localhost', '6008' },
+    -- cmd = { 'nc', 'localhost', '6008' },
     filetypes = { 'gd', 'gdscript', 'gdscript3' },
     root_dir = util.root_pattern('project.godot', '.git'),
   },

@@ -247,16 +247,16 @@ function M.server_per_root_dir_manager(_make_config)
       if new_config.enabled == false then
         return
       end
-      if not new_config.cmd then
-        vim.notify(
-          string.format(
-            '[lspconfig] cmd not defined for %q. Manually set cmd in the setup {} call according to server_configurations.md, see :help lspconfig-index.',
-            new_config.name
-          ),
-          vim.log.levels.ERROR
-        )
-        return
-      end
+      -- if not new_config.cmd then
+      --   vim.notify(
+      --     string.format(
+      --       '[lspconfig] cmd not defined for %q. Manually set cmd in the setup {} call according to server_configurations.md, see :help lspconfig-index.',
+      --       new_config.name
+      --     ),
+      --     vim.log.levels.ERROR
+      --   )
+      --   return
+      -- end
       new_config.on_exit = M.add_hook_before(new_config.on_exit, function()
         clients[root_dir] = nil
         single_file_clients[root_dir] = nil
